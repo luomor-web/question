@@ -42,7 +42,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "早晚答",
+    "navigationBarTitleText": "海豚答题助手",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
