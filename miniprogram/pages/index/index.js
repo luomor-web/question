@@ -28,8 +28,24 @@ Page({
   onReady: function (e) {
     var that = this;
     apis.getQuestionMenu(0).then(res => {
-      //console.log('menu info ', res);
+      console.log('menu info ', res);
       selector.updateAreaData(that, 0, e, res);
+      let selectData = wx.getStorageSync('selectData')
+      if(selectData) {
+
+      } else {
+        // {"code":0,"data":[{"children":[{"children":[{"children":[],"id":6,"name":"Paper 1- 1月精選100試題"}],"id":4,"name":"卷一"},{"children":[],"id":5,"name":"卷二"}],"id":1,"name":"香港保险考题"},{"children":[],"id":3,"name":"大陆保险考题"}],"message":"success"}
+        let selectData = {
+          province: "香港保险考题",
+          city: "卷一",
+          country: "Paper 1- 1月精選100試題",
+          firstId: 1,
+          secondId: 4,
+          thirdId: 6
+        }
+    
+        wx.setStorageSync('selectData', selectData)
+      }
     });
   },
   hiddenFloatView: function (e) {
@@ -108,7 +124,6 @@ Page({
     this.initShowAd();
   },
   init(inviteUid) {
-
     let changeCategory = '';
     let selectCategory = wx.getStorageSync('selectCategory');
     if (selectCategory) {
@@ -124,7 +139,6 @@ Page({
 
     let uid = this.getUserId();
     if (uid) {
-
       this.initUserInfo(uid);
     } else {
       this.initUserId(inviteUid);
