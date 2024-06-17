@@ -45,6 +45,7 @@ Page({
         }
     
         wx.setStorageSync('selectData', selectData)
+        this.confirmSelect();
       }
     });
   },
