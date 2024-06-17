@@ -20,6 +20,13 @@
 
 ```json
 {
+  
+  pagePath: "/pages/more/index",
+  iconPath: "more-o",
+  selectedIconPath: "more-o",
+  text: "更多"
+},
+{
   "text":"更多",
   "pagePath": "pages/more/index"
 },
