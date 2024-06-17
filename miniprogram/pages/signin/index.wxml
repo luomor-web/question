@@ -17,7 +17,7 @@
 
 <view class="signOperate">
   <view class="signTips">
-   签到可以获得积分噢，积分可以用于导出题库 
+   签到可以获得积分噢
   </view>
   <view wx:if="{{showSubmit}}" bindtap="userSignin" class="signAlready signSubmit">
    立即签到 

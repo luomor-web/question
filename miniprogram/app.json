@@ -62,10 +62,6 @@
       "pagePath": "pages/search/index"
     },
     {
-      "text":"更多",
-      "pagePath": "pages/more/index"
-    },
-    {
       "text":"我的",
       "pagePath":"pages/my/index" 
        
