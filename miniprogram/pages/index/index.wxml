@@ -16,8 +16,7 @@
       </view>
       <view bindtap="startAnswer" class="_div data-v-6923d3fa fixPosition common exam"  >
         <image src="/static/images/icons8-filled-circle-100.png" class="_img data-v-6923d3fa"></image> 
-        <label class="_span data-v-6923d3fa"> 开始答题</label>
-        
+        <label class="_span data-v-6923d3fa">开始答题</label>
       </view>
       <view bindtap="favoriteShow" class="_div data-v-6923d3fa common favorite"  >
         <image src="/static/images/icons8-favorite-64.png" class="_img data-v-6923d3fa"></image> 收藏
@@ -29,7 +28,8 @@
         <image src="/static/images/icons8-rank-64.png" class="_img data-v-6923d3fa"></image> 排名
       </view>
       <view bindtap="startExam" class="_div data-v-6923d3fa fixPosition common exam"  >
-        <image src="/static/images/icons8-filled-circle-blue.png" class="_img data-v-6923d3fa"></image> <label class="_span data-v-6923d3fa">模拟考试</label>
+        <image src="/static/images/icons8-filled-circle-blue.png" class="_img data-v-6923d3fa"></image>
+        <label class="_span data-v-6923d3fa">模拟考试</label>
       </view>
       <view bindtap="signin" class="_div data-v-6923d3fa common favorite">
         <image src="/static/images/icons8-signin-100.png" class="_img data-v-6923d3fa"></image> 签到
