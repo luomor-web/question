@@ -38,10 +38,10 @@ Page({
         let selectData = {
           province: "香港保险考题",
           city: "卷一",
-          country: "Paper 1- 1月精選100試題",
+          country: "風險及保險",
           firstId: 1,
-          secondId: 4,
-          thirdId: 6
+          secondId: 3,
+          thirdId: 5
         }
     
         wx.setStorageSync('selectData', selectData)
