@@ -34,7 +34,7 @@ Page({
       if(selectData) {
 
       } else {
-        // {"code":0,"data":[{"children":[{"children":[{"children":[],"id":6,"name":"Paper 1- 1月精選100試題"}],"id":4,"name":"卷一"},{"children":[],"id":5,"name":"卷二"}],"id":1,"name":"香港保险考题"},{"children":[],"id":3,"name":"大陆保险考题"}],"message":"success"}
+        // {"code":0,"data":[{"children":[{"children":[{"children":[],"id":5,"name":"風險及保險"},{"children":[],"id":6,"name":"法律原則"},{"children":[],"id":7,"name":"保險原則"},{"children":[],"id":8,"name":"保險公司的主要功能"},{"children":[],"id":9,"name":"香港保險業結構"},{"children":[],"id":10,"name":"保險業規管架構"},{"children":[],"id":11,"name":"職業道德及其他有關問題"}],"id":3,"name":"卷一"},{"children":[],"id":4,"name":"卷三"}],"id":1,"name":"香港保险考题"},{"children":[],"id":2,"name":"大陆保险考题"}],"message":"success"}
         let selectData = {
           province: "香港保险考题",
           city: "卷一",
