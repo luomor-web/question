@@ -124,7 +124,6 @@ Page({
                 cid: cid,
                 type: type
             }).then(res => {
-
                 const conclusion = {};
 
                 res.forEach((item, index) => {

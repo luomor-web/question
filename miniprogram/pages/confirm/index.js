@@ -21,8 +21,8 @@ Page({
         this.setData({ selectCategory: selectCategory })
     },
     startExam() {
-        let cid = wx.getStorageSync('cid');
-        this.go('question', 'cid=' + cid + '&type=4');
+        let cid = wx.getStorageSync('pid');
+        this.go('question', 'cid=' + cid + '&type=7');
     },
     go(url, params) {
         wx.redirectTo({

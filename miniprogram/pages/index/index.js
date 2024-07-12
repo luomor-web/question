@@ -70,12 +70,16 @@ Page({
     let selectData = wx.getStorageSync('selectData')
     wx.removeStorageSync('selectData')
     let cid = 0;
+    let pid = 0;
     if (selectData.thirdId) {
       cid = selectData.thirdId;
+      pid = selectData.secondId;
     } else if (selectData.secondId) {
       cid = selectData.secondId;
+      pid = selectData.secondId;
     } else {
       cid = selectData.firstId;
+      pid = selectData.firstId;
     }
     let selectCategory = '';
     if (selectData.firstId) {
@@ -97,6 +101,9 @@ Page({
     if (cid) {
       wx.setStorageSync('cid', cid);
       this.initQuestionCount(cid);
+    }
+    if (pid) {
+      wx.setStorageSync('pid', pid);
     }
   },
   bindChange: function (e) {
