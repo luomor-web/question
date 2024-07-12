@@ -135,6 +135,7 @@ module.exports = {
   formatTime: formatTime,
   getUserId: getUserId,
   getAnswerCid: getAnswerCid,
+  getAnswerPid: getAnswerPid,
   setAnswerType: setAnswerType,
   getAnswerType: getAnswerType,
   showWxToast: showWxToast,
