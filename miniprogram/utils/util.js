@@ -26,6 +26,10 @@ const getAnswerCid= _ => {
   let cid = wx.getStorageSync('cid');
   return cid;
 }
+const getAnswerPid= _ => {
+  let cid = wx.getStorageSync('pid');
+  return cid;
+}
 const  getMenuInfo = _ =>{
   return wx.getStorageSync('cidInfo')
 }

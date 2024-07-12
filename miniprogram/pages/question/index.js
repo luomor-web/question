@@ -92,7 +92,7 @@ Page({
             favorite = true;
         }
 
-        let cid = this.getAnswerCid();
+        let cid = this.getAnswerPid();
         let menuId = type + '' + cid;
 
         this.setData({
@@ -183,6 +183,9 @@ Page({
     },
     getAnswerCid() {
         return utils.getAnswerCid();
+    },
+    getAnswerPid() {
+        return utils.getAnswerPid();
     },
     getUserId() {
         return utils.getUserId();
