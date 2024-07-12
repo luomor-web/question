@@ -209,6 +209,8 @@ Page({
       // type 1 答题 2 错题  3 收藏 4 模拟考试
       if (type == 4) {
         this.go('confirm');
+      } else if(type == 7) {
+        this.go('confirm');
       } else if (type == 3) {
         this.go('favorite');
       } else if (type == 2) {
@@ -242,7 +244,8 @@ Page({
     let _this = this;
     let userInfo = this.getUserInfo();
     if (userInfo) {
-      this.goQuestion(4);
+      // this.goQuestion(4);
+      this.goQuestion(7);
     } else {
       wx.showModal({
         title: '温馨提示',

@@ -84,6 +84,10 @@ Page({
             this.count_time();
             startExam = 1;
             showTime = true;
+        } else if(type == 7) {
+            this.count_time();
+            startExam = 1;
+            showTime = true;
         } else if (type == 3) {
             favorite = true;
         }
@@ -350,6 +354,8 @@ Page({
         let type = utils.getAnswerType();
         if (type == 4) {
             this.autoNextQuestion();
+        } else if(type == 7) {
+            this.autoNextQuestion();
         }
     },
     //顺序答题时记录上次答题位置的方法
@@ -565,8 +571,9 @@ Page({
             let type = utils.getAnswerType();
             if (type == 4) {
                 this.autoExamSubmit('已经答完最后一题了', true);
+            } else if(type == 7) {
+                this.autoExamSubmit('已经答完最后一题了', true);
             } else {
-
                 utils.showWxToast('已经是最后一题了。')
             }
             return false
