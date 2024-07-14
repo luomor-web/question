@@ -65,13 +65,16 @@ const showWxToast = toastMsg => {
     duration: 2000
   })
 }
-const getExamResult = right => {
+const getExamResult = (right, fullScore) => {
   let result = '';
-  if (right > 85) {
+  let num1 = Math.round(fullScore * 0.85);
+  let num2 = Math.round(fullScore * 0.70);
+  let num3 = Math.round(fullScore * 0.60);
+  if (right > num1) {
     result = '成绩优秀';
-  } else if (right > 70) {
+  } else if (right > num2) {
     result = '成绩良好';
-  } else if (right >= 60) {
+  } else if (right >= num3) {
     result = '成绩合格';
   } else {
     result = '成绩不合格';
