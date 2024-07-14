@@ -6,7 +6,7 @@
       <view class="_li data-v-057df0c5"> 合格标准：<label class="_span data-v-057df0c5">满分<label class="_span data-v-057df0c5 newColor">{{fullScore}}</label>分，<label class="_span data-v-057df0c5 newColor">{{passScore}}</label>分及格</label></view>
     </view>
     <view bindtap="startExam" class="footer"  > 开始模拟考试</view>
-    <view bindtap="exportExam" class="footer exportExam"  > 导出模拟试卷</view>
+    <!--<view bindtap="exportExam" class="footer exportExam"  > 导出模拟试卷</view>-->
   </view>
 
   <view class="adContainer"  wx:if="{{showAd}}">
