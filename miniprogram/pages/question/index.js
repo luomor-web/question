@@ -598,7 +598,7 @@ Page({
     addOrRemoveWrongQuestion(type) {
 
         let data = {
-            cid: this.getAnswerCid(),
+            cid: this.data.question[this.data.nowIndex].pid,
             uid: this.getUserId(),
             id: this.data.question[this.data.nowIndex].id,
             type: type
@@ -613,7 +613,7 @@ Page({
         }
         const _this = this;
         let data = {
-            cid: this.getAnswerCid(),
+            cid: this.data.question[this.data.nowIndex].pid,
             uid: this.getUserId(),
             id: this.data.question[this.data.nowIndex].id
         }
@@ -637,7 +637,7 @@ Page({
             favorite = true;
         }
         let data = {
-            cid: this.getAnswerCid(),
+            cid: this.data.question[this.data.nowIndex].pid,
             uid: this.getUserId(),
             id: this.data.question[this.data.nowIndex].id,
             type: type
@@ -772,7 +772,7 @@ Page({
         //console.log(this.data.time, minute,useTime )
         let data = {
             uid: this.getUserId(),
-            cid: this.getAnswerCid(),
+            cid: this.data.question[this.data.nowIndex].pid,
             right: right,
             wrong: error
         }
@@ -838,7 +838,7 @@ Page({
             let data = {
                 uid: this.getUserId(),
                 reason: reason,
-                cid: this.getAnswerCid(),
+                cid: this.data.question[this.data.nowIndex].pid,
                 qid: this.data.question[this.data.nowIndex].id
             }
             apis.questionCorrect(data).then(res => {
