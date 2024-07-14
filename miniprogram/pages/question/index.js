@@ -34,7 +34,9 @@ Page({
         countTime: 1800,
         showModify: false,
         modifyReason: '',
-        active: 0
+        active: 0,
+        fullScore: 75,
+        passScore: 53
 
     },
     onReady() {
@@ -47,6 +49,23 @@ Page({
         this.setData({
             showTips: showTips
         })
+        let pid = wx.getStorageSync('pid');
+        if(pid == 3) {
+            this.setData({
+                fullScore: 75,
+                passScore: 53,
+            })
+        } else if(pid == 4) {
+            this.setData({
+                fullScore: 50,
+                passScore: 30,
+            })
+        } else {
+            this.setData({
+                fullScore: 100,
+                passScore: 60,
+            })
+        }
     },
     onShow() {
         let index = utils.getCollectionIndex() || 0;
@@ -715,7 +734,7 @@ Page({
         let number = this.data.number;
         let right = number.right || 0;
         let count = number.count || 0;
-        let waitAnswer = 100 - count;
+        let waitAnswer = this.data.fullScore - count;
         let result = utils.getExamResult(right);
         this.setData({
             examSubmit: 1,
