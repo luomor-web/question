@@ -789,9 +789,11 @@ Page({
         second = m * 60 + s;
         let useTime = this.data.countTime - second;
         //console.log(this.data.time, minute,useTime )
+        let pid = wx.getStorageSync('pid');
         let data = {
             uid: this.getUserId(),
-            cid: this.data.question[this.data.nowIndex].pid,
+            //cid: this.data.question[this.data.nowIndex].pid,
+            cid: pid,
             right: right,
             wrong: error
         }
