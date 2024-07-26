@@ -203,7 +203,7 @@ Page({
   },
   goQuestion(type) {
     let cid = wx.getStorageSync('cid');
-    if (cid) {
+    if (cid >= 0) {
       this.setAnswerType(type)
       if (this.data.questionCount == 0) {
         utils.showWxToast('题库题数量为0，请切换题库。');
