@@ -111,8 +111,9 @@ Page({
             favorite = true;
         }
 
-        let cid = this.getAnswerPid();
-        let menuId = type + '' + cid;
+        let pid = this.getAnswerPid();
+        let cid = this.getAnswerCid();
+        let menuId = type + '' + pid + cid;
 
         this.setData({
             showAnswer: showAnswer,
@@ -144,6 +145,7 @@ Page({
             //TODO 尝试分页获取数据现在list太大了。。。
             apis.question({
                 uid: this.getUserId(),
+                pid: pid,
                 cid: cid,
                 type: type
             }).then(res => {
