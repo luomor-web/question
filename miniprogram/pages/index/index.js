@@ -74,7 +74,7 @@ Page({
     wx.removeStorageSync('selectData')
     let cid = 0;
     let pid = 0;
-    if (selectData.thirdId) {
+    if (selectData.thirdId >= 0) {
       cid = selectData.thirdId;
       pid = selectData.secondId;
     } else if (selectData.secondId) {
