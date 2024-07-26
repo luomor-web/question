@@ -101,6 +101,7 @@ Page({
       })
     }
 
+    console.log(pid + " " + cid);
     if (cid >= 0) {
       wx.setStorageSync('cid', cid);
       this.initQuestionCount(pid, cid);
