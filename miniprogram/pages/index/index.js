@@ -52,12 +52,15 @@ Page({
   hiddenFloatView: function (e) {
     selector.animationEvents(this, 200, false, 400);
   },
-  initQuestionCount(cid) {
-    if (!cid) {
+  initQuestionCount(pid, cid) {
+    if (cid < 0) {
       return;
     }
     let that = this;
-    let data = { cid: cid }
+    let data = {
+      pid: pid,
+      cid: cid
+    }
     apis.getQuestionCount(data).then(res => {
       res = res || 0;
       that.setData({
@@ -88,7 +91,7 @@ Page({
     if (selectData.secondId) {
       selectCategory += '>' + selectData.city;
     }
-    if (selectData.thirdId) {
+    if (selectData.thirdId >= 0) {
       selectCategory += '>' + selectData.country;
     }
     if (selectCategory) {
@@ -98,9 +101,9 @@ Page({
       })
     }
 
-    if (cid) {
+    if (cid >= 0) {
       wx.setStorageSync('cid', cid);
-      this.initQuestionCount(cid);
+      this.initQuestionCount(pid, cid);
     }
     if (pid) {
       wx.setStorageSync('pid', pid);
@@ -151,7 +154,7 @@ Page({
     } else {
       this.initUserId(inviteUid);
     }
-    this.initQuestionCount(utils.getAnswerCid());
+    this.initQuestionCount(utils.getAnswerPid(), utils.getAnswerCid());
   },
   initUserInfo(uid) {
     let data = {
@@ -238,7 +241,6 @@ Page({
   },
   chooseCategory() {
     selector.animationEvents(this, 0, true, 400);
-
   },
   startExam() {
     let _this = this;
