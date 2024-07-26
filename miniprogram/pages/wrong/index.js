@@ -29,6 +29,7 @@ Page({
             let showVal = '去练习';
             let _this = this;
             let data = {
+                pid: utils.getAnswerPid(),
                 cid: utils.getAnswerCid(),
                 uid: utils.getUserId() 
             }
