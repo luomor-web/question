@@ -72,7 +72,8 @@ Page({
     console.log(e);
     selector.animationEvents(this, 200, false, 400);
     let selectData = wx.getStorageSync('selectData')
-    wx.removeStorageSync('selectData')
+    console.log(selectData)
+    //wx.removeStorageSync('selectData')
     let cid = 0;
     let pid = 0;
     if (selectData.thirdId >= 0) {
@@ -95,6 +96,7 @@ Page({
     if (selectData.thirdId >= 0) {
       selectCategory += '>' + selectData.country;
     }
+    utils.showWxToast(selectCategory);
     if (selectCategory) {
       wx.setStorageSync('selectCategory', selectCategory)
       this.setData({
@@ -118,6 +120,7 @@ Page({
     let first = item.provinces[item.value[0]];
     let second = item.citys[item.value[1]] || {};
     let third = item.countys[item.value[2]] || {};
+    utils.showWxToast(third.name);
     let selectData = {
       province: first.name,
       city: second.name,

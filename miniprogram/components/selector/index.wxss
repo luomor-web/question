@@ -62,13 +62,12 @@ picker-view-column view{
 
 
 .animation-element text{
- 
   display: inline-flex;  
   position: fixed;
-  margin-top: 20rpx;
-  height: 50rpx;
+  /*margin-top: 20rpx;*/
+  height: 100rpx;
   text-align: center;
-  line-height: 50rpx;
+  line-height: 100rpx;
   font-size: 34rpx;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -82,11 +81,11 @@ picker-view-column view{
   color: #508aff;
 }
 
-.line{
+.line {
   display: block;
   position: fixed;
   height: 1rpx;
   width: 100%;
-  margin-top: 89rpx; 
+  margin-top: 100rpx;
   background-color: #eeeeee;
 }
