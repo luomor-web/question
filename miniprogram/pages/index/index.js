@@ -69,6 +69,7 @@ Page({
     })
   },
   confirmSelect: function (e) {
+    console.log(e);
     selector.animationEvents(this, 200, false, 400);
     let selectData = wx.getStorageSync('selectData')
     wx.removeStorageSync('selectData')
@@ -113,7 +114,7 @@ Page({
   bindChange: function (e) {
     selector.updateAreaData(this, 1, e);
     item = this.data.item;
-    //console.log(item)
+    console.log(item)
     let first = item.provinces[item.value[0]];
     let second = item.citys[item.value[1]] || {};
     let third = item.countys[item.value[2]] || {};
