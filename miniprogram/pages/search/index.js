@@ -78,8 +78,9 @@ Page({
           searchVal: val,
         });
       }
+      let pid = utils.getAnswerPid();
       let cid = utils.getAnswerCid();
-      if (!cid) {
+      if (cid < 0) {
         utils.showWxToast('请先选择题库');
         return ;
       }
@@ -90,6 +91,7 @@ Page({
        
       let that = this;  
         let data = {
+          pid: pid,
           cid: cid,
           uid: utils.getUserId(),
           keywords:val,
