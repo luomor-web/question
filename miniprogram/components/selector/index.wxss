@@ -1,12 +1,12 @@
 /* model.wxss */
-.infoText{
-    margin-top: 20rpx;
-    text-align: center;
-    width: 100%;
-    justify-content: center; 
+.infoText {
+  margin-top: 20rpx;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
 }
 
-.centerText{
+.centerText {
   margin-top: 100rpx;
   width: 100%;
   text-align: center;
@@ -14,17 +14,17 @@
 
 /* --------------分割线------------- */
 
-picker-view{
+picker-view {
   background-color: white;
   padding: 0;
-  width: 100%; 
+  width: 100%;
   height: 380rpx;
   bottom: 0;
   position: fixed;
 }
 
-picker-view-column view{
-  vertical-align:middle; 
+picker-view-column view {
+  vertical-align: middle;
   font-size: 28rpx;
   line-height: 28rpx;
   height: 100%;
@@ -34,14 +34,15 @@ picker-view-column view{
 }
 
 .animation-element-wrapper {
-  display: flex;  
+  display: flex;
   position: fixed;
   left: 0;
-  top:0;
+  top: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
+
 .animation-element {
   display: flex;
   position: fixed;
@@ -53,16 +54,16 @@ picker-view-column view{
 
 .animation-button {
   margin-top: 20rpx;
-  top:20rpx;
+  top: 20rpx;
   width: 400rpx;
-  height: 100rpx; 
-  line-height: 100rpx; 
-  align-items:center;
+  height: 50rpx;
+  line-height: 50rpx;
+  align-items: center;
 }
 
 
-.animation-element text{
-  display: inline-flex;  
+.animation-element text {
+  display: inline-flex;
   position: fixed;
   /*margin-top: 20rpx;*/
   height: 100rpx;
@@ -72,10 +73,11 @@ picker-view-column view{
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.left-bt{
+.left-bt {
   left: 30rpx;
   color: #e9aa14;
 }
+
 .right-bt {
   right: 30rpx;
   color: #508aff;
@@ -86,6 +88,6 @@ picker-view-column view{
   position: fixed;
   height: 1rpx;
   width: 100%;
-  margin-top: 100rpx;
+  margin-top: 89rpx;
   background-color: #eeeeee;
 }
