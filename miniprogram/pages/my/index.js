@@ -3,7 +3,8 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data: {
-        userInfo: {}
+        userInfo: {},
+        phoneBtnShow: true
     },
 
     gotoProfile() {
@@ -97,8 +98,39 @@ Page({
             })
         }
     },
-    bindCellphone() {
-
+    bindCellphone(e) {
+        if (e.detail.errMsg !== "getPhoneNumber:ok") {
+            // 拒绝授权
+            return;
+          }
+      
+          let uid = utils.getUserId();
+          if (!uid) {
+            wx.showToast({
+              title: '绑定失败：请先登录',
+              icon: 'none',
+              duration: 2000
+            });
+            return;
+          }
+      
+          let data = {
+            iv: e.detail.iv,
+            encryptedData: e.detail.encryptedData,
+            uid: uid,
+            appId: app.appId
+          }
+          apis.bindCellphone(data).then(res => {
+            console.log(res);
+            let userInfo = wx.getStorageSync('userInfo');
+            let cellphone = res.cellphone;
+            wx.setStorageSync('cellphone', cellphone);
+            wx.showToast({
+                title: '绑定手机号码成功',
+                icon: 'success',
+                duration: 2000
+            });
+          });
     },
     invite() {
         wx.navigateTo({

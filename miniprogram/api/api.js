@@ -6,6 +6,7 @@ var url = {
   systemInit: "init",
   userLogin: "v2/user/login",
   getUserPhone: "user/phone",
+  bindCellphone: 'user/bindCellphone', //绑定微信手机号
   getQuestionMenu: "category/list",
   userCardReceive: "card/receive",
   favoriteCount: 'answer/favoriteCount',
@@ -74,6 +75,15 @@ module.exports = {
     return http({
       url: url.getUserPhone,
       data: params
+    })
+  },
+  bindCellphone(data) {
+    let appId = data.appId;
+    delete data.appId;
+    return http({
+      url: url.bindCellphone + '/' + appId,
+      data: data,
+      method: 'POST'
     })
   },
 

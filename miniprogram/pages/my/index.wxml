@@ -12,10 +12,10 @@
   </view>
   <view class="_div data-v-b814dec6 list">
     <view class="_ul data-v-b814dec6">
-      <view bindtap="bindCellphone" class="_li data-v-b814dec6">
-        <image src="/static/images/icons8-shopping-basket-star-48.png" alt class="_img data-v-b814dec6"></image>
+      <button class="_li data-v-b814dec6" style="margin-left: -22px;" open-type="getPhoneNumber" bindgetphonenumber="bindCellphone" wx:if="{{phoneBtnShow}}">
+        <image src='/static/images/icons8-shopping-basket-star-48.png' alt class="_img data-v-b814dec6"></image>
         <label class="_span data-v-b814dec6">绑定手机号</label>
-      </view>
+      </button>
       <view bindtap="invite" class="_li data-v-b814dec6">
         <image src="/static/images/icons8-share-100.png" alt class="_img data-v-b814dec6"></image>
         <label class="_span data-v-b814dec6">邀请朋友</label>
