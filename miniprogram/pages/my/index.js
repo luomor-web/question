@@ -89,6 +89,9 @@ Page({
     },
     onShow() {
         let userInfo = wx.getStorageSync('userInfo');
+        if(userInfo.cellphone && userInfo.cellphone != "") {
+            this.setData({phoneBtnShow: false});
+        }
         this.setData({ userInfo: userInfo })
         if (typeof this.getTabBar === 'function' &&
             this.getTabBar()) {

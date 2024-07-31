@@ -369,6 +369,7 @@ Page({
             wx.hideLoading();
             wx.setStorageSync('uid', res.userId)
             wx.setStorageSync('userToken', res.token)
+            wx.setStorageSync('userInfo', res.userInfo)
             if(res.cellphone && res.cellphone != "") {
           
             } else {
