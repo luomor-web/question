@@ -119,17 +119,41 @@ Page({
             encryptedData: e.detail.encryptedData,
             uid: uid,
             appId: app.appId
-          }
-          apis.bindCellphone(data).then(res => {
-            console.log(res);
-            let userInfo = wx.getStorageSync('userInfo');
-            let cellphone = res.cellphone;
-            wx.setStorageSync('cellphone', cellphone);
-            wx.showToast({
-                title: '绑定手机号码成功',
-                icon: 'success',
-                duration: 2000
-            });
+          };
+          wx.showLoading({
+            'title': '正在绑定手机号，请稍候...',
+            'mask': true
+          });
+          wx.login({
+            success(res) {
+              console.log(res)
+              let data1 = {
+                code: res.code,
+                appId: app.appId
+              }
+              if (res.code) {
+                apis.userLogin(data1).then(res => {
+                  wx.hideLoading();
+                  wx.setStorageSync('uid', res.userId)
+                  wx.setStorageSync('userToken', res.token)
+                  apis.bindCellphone(data).then(res => {
+                    console.log(res);
+                    let userInfo = wx.getStorageSync('userInfo');
+                    userInfo = res;
+                    wx.setStorageSync('userInfo', userInfo);
+                    wx.showToast({
+                        title: '绑定手机号成功',
+                        icon: 'success',
+                        duration: 2000
+                    });
+                  });
+                });
+              }
+            },
+            fail(res) {
+              wx.hideLoading();
+              console.log(res)
+            }
           });
     },
     invite() {

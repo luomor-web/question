@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "van-dialog": "../../components/vant/dialog/index"
+    "van-dialog": "../../components/vant/dialog/index",
+    "van-popup": "../../components/vant/popup/index"
   }
 }

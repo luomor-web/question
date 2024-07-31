@@ -12,6 +12,8 @@ Page({
     questionCount: 0,
     changeCategory: '切换题库',
     selectCategory: '',
+    showNoMore: false,
+    noMoreTips: "很抱歉给您带来困扰，目前不能继续为您提供服务",
     item: {
       show: show
     },
@@ -165,9 +167,45 @@ Page({
     let data = {
       uid: uid
     }
+    const vm = this;
     console.log(data)
     apis.getUserInfo(data).then(res => {
       wx.setStorageSync('userInfo', res)
+          // get mobile
+      if(res.cellphone && res.cellphone != "") {
+          
+      } else {
+          // request mobile
+          Dialog.confirm({
+              context: vm,
+              selector: '#van-dialog',
+              title: '港险刷题',
+              message: '为了数据安全及个性化题库，需要用户手机号，请前往下方“我的”绑定手机号',
+              confirmButtonText: '去绑定',
+              cancelButtonText: '取消',
+          })
+              .then(() => {
+                  // on confirm
+                  wx.switchTab({
+                      url: "/pages/my/index"
+                  });
+              })
+              .catch(() => {
+                  // on cancel
+                  this.setData({
+                      noMoreTips: "很抱歉给您带来困扰，目前不能继续为您提供服务",
+                      showNoMore: true
+                  });
+              });
+        }
+    })
+  },
+  onCloseNoMore() {
+
+  },
+  onHide:function() {
+    this.setData({
+        showNoMore: false
     })
   },
   initShowAd() {
@@ -313,6 +351,7 @@ Page({
 
   initUserId(inviteUid) {
     //console.log('准备登录')
+    const vm = this;
     wx.showLoading({
       'title': '正在初始化，请稍候...',
       'mask': true
@@ -330,6 +369,32 @@ Page({
             wx.hideLoading();
             wx.setStorageSync('uid', res.userId)
             wx.setStorageSync('userToken', res.token)
+            if(res.cellphone && res.cellphone != "") {
+          
+            } else {
+                // request mobile
+                Dialog.confirm({
+                    context: vm,
+                    selector: '#van-dialog',
+                    title: '港险刷题',
+                    message: '为了数据安全及个性化题库，需要用户手机号，请前往下方“我的”绑定手机号',
+                    confirmButtonText: '去绑定',
+                    cancelButtonText: '取消',
+                })
+                    .then(() => {
+                        // on confirm
+                        wx.switchTab({
+                            url: "/pages/my/index"
+                        });
+                    })
+                    .catch(() => {
+                        // on cancel
+                        this.setData({
+                            noMoreTips: "很抱歉给您带来困扰，目前不能继续为您提供服务",
+                            showNoMore: true
+                        });
+                    });
+              }
           });
         }
       },

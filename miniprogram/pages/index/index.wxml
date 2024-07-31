@@ -41,3 +41,4 @@
   </view>
   <import src="../../components/selector/index.wxml"/>
   <template is="areaData" data="{{...item}}"/>
+  <van-popup show="{{ showNoMore }}" bind:close="onCloseNoMore">{{ noMoreTips }}</van-popup>
