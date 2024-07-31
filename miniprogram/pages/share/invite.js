@@ -2,30 +2,30 @@ const app = getApp();
 const apis = app.apis;
 const utils = app.utils;
 Page({
-    data:{
-        showAd:getApp().globalData.showAd,
-        integral:0,
+    data: {
+        showAd: getApp().globalData.showAd,
+        integral: 0,
     },
-    onLoad(){
+    onLoad() {
         let that = this;
-        apis.getInviteIntegral().then(res=>{
+        apis.getInviteIntegral().then(res => {
             res = res || 0;
             that.setData({
-                integral:res
+                integral: res
             })
         });
     },
-    onShareAppMessage(){
+    onShareAppMessage() {
         let uid = utils.getUserId();
         return {
-            title:'亲爱的，来这里答题喽',
-            imageUrl:'http://image.siival.com/2.png', 
-            path:'/pages/index/index?uid='+uid 
+            title: '亲爱的，来这里答题喽',
+            imageUrl: '',
+            path: '/pages/index/index?uid=' + uid
         }
     },
-    gotoInviteLog(){
+    gotoInviteLog() {
         wx.navigateTo({
-          url: '/pages/integral/invite',
+            url: '/pages/integral/invite',
         })
     }
 })

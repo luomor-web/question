@@ -102,6 +102,7 @@ Page({
         }
     },
     bindCellphone(e) {
+        const vm = this;
         if (e.detail.errMsg !== "getPhoneNumber:ok") {
             // 拒绝授权
             return;
@@ -144,6 +145,7 @@ Page({
                     let userInfo = wx.getStorageSync('userInfo');
                     userInfo = res;
                     wx.setStorageSync('userInfo', userInfo);
+                    vm.setData({phoneBtnShow: false});
                     wx.showToast({
                         title: '绑定手机号成功',
                         icon: 'success',
