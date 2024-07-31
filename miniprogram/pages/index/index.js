@@ -180,6 +180,9 @@ Page({
     if(!userInfo) {
       return;
     }
+    if(this.data.showNoMore) {
+      return;
+    }
     // get cellphone
     if(userInfo.cellphone && userInfo.cellphone != "") {
         
