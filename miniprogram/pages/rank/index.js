@@ -3,29 +3,31 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data: {
-        selectCategory:'',
+        selectCategory: '',
         rankList: [
-           
+
         ]
     },
-    onLoad(){
+    onLoad() {
         this.init();
     },
-    init(){
+    init() {
         let that = this;
-        let selectCategory = wx.getStorageSync('selectCategory') ; 
+        let selectCategory = wx.getStorageSync('selectCategory');
+        let pid = utils.getAnswerPid();
         let cid = utils.getAnswerCid();
-        let data={
-            cid:cid
+        let data = {
+            pid: pid,
+            cid: cid
         }
-        
-        apis.getExamRank(data).then(res=>{
+
+        apis.getExamRank(data).then(res => {
             that.setData({
-                rankList:res
+                rankList: res
             });
         })
         this.setData({
-           selectCategory :selectCategory
+            selectCategory: selectCategory
         })
     }
 })
