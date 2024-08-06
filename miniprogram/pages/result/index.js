@@ -2,7 +2,10 @@ Page({
     data: {
         showAd: getApp().globalData.showAd,
         examTime: '29分59秒',
-        examScore: 0
+        examScore: 0,
+        resultScore: 100,
+        resultText: "通过",
+        resultColor: "#07c160"// #ee0a24
     },
     onLoad(options) {
         //console.log(options);

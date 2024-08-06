@@ -9,6 +9,13 @@
       答题耗时：{{ examTime }}
     </view>
   </view>
+  <view class="content">
+    <van-circle
+      value="{{ resultScore }}"
+      color="{{ resultColor }}"
+      text="{{ resultText }}"
+    />
+  </view>
   <view class="clear"></view>
   <van-divider />
   <view bindtap="showExamRank" class="itemOperate">
