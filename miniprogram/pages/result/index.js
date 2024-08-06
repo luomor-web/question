@@ -1,29 +1,29 @@
 Page({
     data: {
-        showAd:getApp().globalData.showAd,
-        examTime:'29分59秒',
-        examScore:0
+        showAd: getApp().globalData.showAd,
+        examTime: '29分59秒',
+        examScore: 0
     },
-    onLoad(options){
-       //console.log(options);
+    onLoad(options) {
+        //console.log(options);
         let score = options.score;
         let cTime = options.time;
-        let min = Math.floor(cTime/60)<10 ? '0'+Math.floor(cTime/60) : Math.floor(cTime/60) || 0;
-        let s = (cTime%60)<10 ? '0'+cTime%60 : cTime%60 || 0;
+        let min = Math.floor(cTime / 60) < 10 ? '0' + Math.floor(cTime / 60) : Math.floor(cTime / 60) || 0;
+        let s = (cTime % 60) < 10 ? '0' + cTime % 60 : cTime % 60 || 0;
         this.setData({
-            examScore:score,
-            examTime: min + '分' + s+'秒'
+            examScore: score,
+            examTime: min + '分' + s + '秒'
         })
     },
-    examAgain(){
+    examAgain() {
         wx.redirectTo({
-          url: '/pages/confirm/index',
+            url: '/pages/confirm/index',
         })
     },
-    showExamRank(){
+    showExamRank() {
         wx.redirectTo({
             url: '/pages/rank/index',
-          })
+        })
     }
-    
+
 })

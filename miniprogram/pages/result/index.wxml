@@ -1,37 +1,35 @@
 <view class="container">
-    <view class="title">
-      <view class="examScore">
-        <van-image  
-          width="1rem"
-          height="1rem" src="/static/images/icons8-submit-resume-48.png" />
-     考试得分：{{ examScore }}
+  <view class="title">
+    <view class="examScore">
+      <van-image width="1rem" height="1rem" src="/static/images/icons8-submit-resume-48.png" />
+      考试得分：{{ examScore }}
     </view>
-    <view    class="examTime">   
-       <van-image round
-          width="1rem"
-          height="1rem" src="/static/images/icons8-time-machine-50.png" />
-          答题耗时：{{ examTime }} </view> 
+    <view class="examTime">
+      <van-image round width="1rem" height="1rem" src="/static/images/icons8-time-machine-50.png" />
+      答题耗时：{{ examTime }}
     </view>
-    <view class="clear"></view>
-    <van-divider/>
-     <view bindtap="showExamRank"  class="itemOperate"  >
-      <view class="itemText"> 答题排行 <label class="itemLabel">
-          <image src="/static/images/right_double.png" alt class="itemImage"></image>
-        </label>
-      </view>
+  </view>
+  <view class="clear"></view>
+  <van-divider />
+  <view bindtap="showExamRank" class="itemOperate">
+    <view class="itemText">
+      答题排行
+      <label class="itemLabel">
+        <image src="/static/images/right_double.png" alt class="itemImage"></image>
+      </label>
     </view>
-    <van-divider/>
-
-    <view bindtap="examAgain"  class="itemOperate"  >
-      <view class="itemText"> 再次考试 <label class="itemLabel">
-          <image src="/static/images/right_double.png" alt class="itemImage"></image>
-        </label>
-      </view>
+  </view>
+  <van-divider />
+  <view bindtap="examAgain" class="itemOperate">
+    <view class="itemText">
+      再次考试
+      <label class="itemLabel">
+        <image src="/static/images/right_double.png" alt class="itemImage"></image>
+      </label>
     </view>
-    <van-divider/>
-    
+  </view>
+  <van-divider />
 </view>
-
-<view class="adContainer"  wx:if="{{showAd}}">
+<view class="adContainer" wx:if="{{showAd}}">
   <ad unit-id="adunit-00dcdc9adfa8c391" ad-intervals="30"></ad>
 </view>
