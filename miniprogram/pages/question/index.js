@@ -664,7 +664,6 @@ Page({
             type: type
         }
         apis.favoriteQuestion(data).then(res => {
-
             let toastMsg = '';
             if (res) {
                 _this.setData({ favorite: favorite })
@@ -763,7 +762,6 @@ Page({
             confirmColor: '#000000',
 
             success(res) {
-
                 if (res.confirm) {
                     that.examSubmit();
                 }
