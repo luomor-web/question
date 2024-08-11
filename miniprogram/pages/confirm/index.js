@@ -2,6 +2,7 @@ Page({
     data: {
         showAd: getApp().globalData.showAd,
         selectCategory: '',
+        examTatalTime: 120,
         questionNum: 75,
         fullScore: 75,
         passScore: 53
