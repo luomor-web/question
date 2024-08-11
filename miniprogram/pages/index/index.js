@@ -416,7 +416,6 @@ Page({
   },
   showExamRank() {
     this.go('rank');
-
   },
   onShareAppMessage() {
     return {
@@ -440,7 +439,4 @@ Page({
       url: '/pages/share/index?type=6&show=0&qid=1',
     })
   }
-
-
-
 })
