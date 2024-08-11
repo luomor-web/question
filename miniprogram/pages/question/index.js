@@ -60,7 +60,7 @@ Page({
             this.setData({
                 fullScore: 50,
                 passScore: 30,
-                countTime: 4140,
+                countTime: 4500,
             })
         } else {
             this.setData({
@@ -83,7 +83,20 @@ Page({
             timingFunction: 'ease',
             transformOrigin: '50% 50% 0'
         });
-        let pid = wx.getStorageSync('pid');
+    },
+    onLoad(options) {
+        wx.showLoading({
+            title: '正在加载题库',
+        })
+        options = options || {}
+        //console.log('options', options)
+
+        let _this = this;
+        let showAnswer = false;
+
+        let pid = this.getAnswerPid();
+        let cid = this.getAnswerCid();
+        console.log(pid)
         if(pid == 3) {
             this.setData({
                 fullScore: 75,
@@ -91,6 +104,7 @@ Page({
                 countTime: 7200,
             })
         } else if(pid == 4) {
+            console.log(4500)
             this.setData({
                 fullScore: 50,
                 passScore: 30,
@@ -103,17 +117,6 @@ Page({
                 countTime: 1800,
             })
         }
-    },
-    onLoad(options) {
-        wx.showLoading({
-            title: '正在加载题库',
-        })
-        options = options || {}
-        //console.log('options', options)
-
-        let _this = this;
-        let showAnswer = false;
-
         let type = this.getAnswerType();
         // type 1 答题 2 错题  3 收藏 4 模拟考试
         clearInterval(this.data.time_inter)
@@ -133,8 +136,6 @@ Page({
             favorite = true;
         }
 
-        let pid = this.getAnswerPid();
-        let cid = this.getAnswerCid();
         let menuId = type + '' + pid + cid;
 
         this.setData({
@@ -216,8 +217,6 @@ Page({
                 wx.hideLoading()
             });
         }
-
-
     },
 
 
@@ -336,8 +335,6 @@ Page({
 
         let conclusion = this.data.conclusion;
         conclusion[id].right = right || 0;
-
-
 
         let userAnswer = [];
         userAnswer[0] = index;
@@ -721,6 +718,7 @@ Page({
         let _this = this;
 
         let cTime = this.data.countTime;
+        console.log(cTime)
         _this.data.time_inter = setInterval(function () {
             cTime -= 1
             const min = Math.floor(cTime / 60) < 10 ? '0' + Math.floor(cTime / 60) : Math.floor(cTime / 60)
