@@ -94,7 +94,7 @@ Page({
             this.setData({
                 fullScore: 50,
                 passScore: 30,
-                countTime: 4140,
+                countTime: 4500,
             })
         } else {
             this.setData({
