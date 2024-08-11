@@ -63,7 +63,7 @@
   <view class="mark"  wx-if="{{ examSubmit }}"  >
       <view class="examTips">
           
-          <view class="markTips">当前考试得分：<label class="greenColor">{{ examScore }}</label>分</view>
+          <view class="markTips">当前已经做题：<label class="greenColor">{{ examAnsweredCount }}</label>题</view>
           <view class="examResult">{{ examResult }}</view>
           <view class="examCircle">
           <van-circle value="{{ examAnsweredCount }}" color="red" layer-color="#fdc8c3" size="150" stroke-width="10" text="剩余未做" 
