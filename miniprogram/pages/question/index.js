@@ -31,7 +31,7 @@ Page({
         waitAnswer: '',
         examScore: 0,
         examResult: '',
-        countTime: 1800,
+        countTime: 7200,
         showModify: false,
         modifyReason: '',
         active: 0,
@@ -54,16 +54,19 @@ Page({
             this.setData({
                 fullScore: 75,
                 passScore: 53,
+                countTime: 7200,
             })
         } else if(pid == 4) {
             this.setData({
                 fullScore: 50,
                 passScore: 30,
+                countTime: 4140,
             })
         } else {
             this.setData({
                 fullScore: 100,
                 passScore: 60,
+                countTime: 1800,
             })
         }
     },
@@ -80,7 +83,26 @@ Page({
             timingFunction: 'ease',
             transformOrigin: '50% 50% 0'
         });
-        //
+        let pid = wx.getStorageSync('pid');
+        if(pid == 3) {
+            this.setData({
+                fullScore: 75,
+                passScore: 53,
+                countTime: 7200,
+            })
+        } else if(pid == 4) {
+            this.setData({
+                fullScore: 50,
+                passScore: 30,
+                countTime: 4140,
+            })
+        } else {
+            this.setData({
+                fullScore: 100,
+                passScore: 60,
+                countTime: 1800,
+            })
+        }
     },
     onLoad(options) {
         wx.showLoading({

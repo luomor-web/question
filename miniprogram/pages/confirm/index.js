@@ -29,18 +29,21 @@ Page({
                 questionNum: 75,
                 fullScore: 75,
                 passScore: 53,
+                examTatalTime: 7200,
             })
         } else if(pid == 4) {
             this.setData({
                 questionNum: 50,
                 fullScore: 50,
                 passScore: 30,
+                examTatalTime: 4140,
             })
         } else {
             this.setData({
                 questionNum: 100,
                 fullScore: 100,
                 passScore: 60,
+                examTatalTime: 7200,
             })
         }
     },
